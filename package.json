@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist && tsc",
+    "postinstall": "patch-package",
     "start": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts",
     "stryker": "stryker",
     "test": "jest",
@@ -12,10 +13,13 @@
   },
   "devDependencies": {
     "@stryker-mutator/core": "^2.5.0",
+    "@stryker-mutator/jest-runner": "^2.5.0",
+    "@stryker-mutator/typescript": "^2.5.0",
     "@types/jest": "^25.1.3",
     "@types/node": "^13.7.7",
     "jest": "^25.1.0",
     "nodemon": "^2.0.2",
+    "patch-package": "^6.2.1",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^25.2.1",
