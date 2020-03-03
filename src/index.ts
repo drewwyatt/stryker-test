@@ -1,7 +1,8 @@
-import { Person, isAdult, toPerson } from './person'
+import { toIsAdultString } from './formatters'
+import { Person, toPerson } from './person'
+import { printer } from './printer'
 
-const printIsAdult = (person: Person) =>
-  console.log(`${person.name} ${isAdult(person) ? 'is' : 'is not'} an adult.`)
+const printIsAdult = printer(toIsAdultString)
 
 const people: Person[] = [
   toPerson('Steve', 30),
